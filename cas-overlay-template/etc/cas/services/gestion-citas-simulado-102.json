@@ -1,0 +1,12 @@
+{
+  "@class": "org.apereo.cas.services.CasRegisteredService",
+  "serviceId": "^(https|http)://localhost:8082/.*",
+  "name": "Gestion Citas simulado",
+  "id": 102,
+  "description": "Servicio de Gestión de Citas Simulado",
+  "evaluationOrder": 1,
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes": ["java.util.ArrayList", ["uid", "contrato_activo", "ROLES", "login", "email", "nombre"]]
+  }
+}

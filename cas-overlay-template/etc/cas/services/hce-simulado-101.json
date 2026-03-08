@@ -1,0 +1,13 @@
+{
+  "@class": "org.apereo.cas.services.CasRegisteredService",
+  "serviceId": "^(https|http)://localhost:8081/.*",
+  "name": "HCE simulado",
+  "id": 101,
+  "description": "Servicio de Historia Clínica Electrónica Simulado",
+  "evaluationOrder": 1,
+  "requiredHandlers": ["java.util.HashSet", ["LdapAuthenticationHandler", "DatabaseAuthenticationHandler"]],
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes": ["java.util.ArrayList", ["uid", "contrato_activo", "ROLES", "login", "email", "nombre"]]
+  }
+}

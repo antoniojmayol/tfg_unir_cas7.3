@@ -1,0 +1,24 @@
+{
+  "@class": "org.apereo.cas.services.CasRegisteredService",
+  "serviceId": "^(https|http)://localhost:8083/.*",
+  "name": "Portal Paciente simulado",
+  "id": 103,
+  "description": "Servicio Portal del Paciente Simulado con GOOGLE",
+  "accessStrategy": {
+    "@class": "org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "delegatedAuthenticationPolicy": {
+      "@class": "org.apereo.cas.services.DefaultRegisteredServiceDelegatedAuthenticationPolicy",
+      "allowedProvider": ["Google"]
+    }
+  },
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnMappedAttributeReleasePolicy",
+    "allowedAttributes": {
+      "@class": "java.util.TreeMap",
+      "mail": "email",
+      "displayName": "name",
+      "givenName": "given_name",
+      "sn": "family_name"
+    }
+  }
+}

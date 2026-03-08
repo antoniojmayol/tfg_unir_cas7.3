@@ -1,0 +1,143 @@
+# 1. Crear la unidad organizativa "usuarios"
+dn: ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: organizationalUnit
+ou: usuarios
+
+# 2. Crear la unidad organizativa "groups" (¡NUEVO Y NECESARIO!)
+dn: ou=groups,dc=sms,dc=carm,dc=es
+objectClass: organizationalUnit
+ou: groups
+
+# 3. Crear usuarios
+dn: uid=amh09h,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: amh09h
+description: 34546509H
+mail: antonioj.mayol@carm.es
+sn: mayol
+givenName: Antonio
+cn: Antonio Mayol
+displayName: Antonio Mayol
+uidNumber: 1000
+gidNumber: 1000
+userPassword: password123
+homeDirectory: /home/antonio
+loginShell: /bin/bash
+
+dn: uid=alp04r,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: alp04r
+description: 48546509R
+mail: alberto.penaranda@carm.es
+sn: penaranda
+givenName: Alberto
+cn: Alberto Penaranda
+displayName: Alberto Penaranda
+uidNumber: 1001
+gidNumber: 1001
+userPassword: password123
+homeDirectory: /home/alberto
+loginShell: /bin/bash
+
+dn: uid=med08p,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: med08p
+description: 12345678P
+mail: alejandro.mayol@carm.es
+sn: Mayol
+givenName: Alejandro
+cn: Alejandro Mayol
+displayName: Alejandro Mayol
+uidNumber: 1002
+gidNumber: 1002
+userPassword: password123
+homeDirectory: /home/alejandro
+loginShell: /bin/bash
+
+dn: uid=med03j,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: med03j
+description: 12345673J
+mail: juan.garcia@carm.es
+sn: García López
+givenName: Juan
+cn: Juan García López
+displayName: Dr. Juan García López
+uidNumber: 1003
+gidNumber: 1003
+userPassword: password123
+homeDirectory: /home/juan
+loginShell: /bin/bash
+
+dn: uid=enf04m,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: enf04m
+description: 12345674M
+mail: maria.rodriguez@carm.es
+sn: Rodríguez Pérez
+givenName: María
+cn: María Rodríguez Pérez
+displayName: María Rodríguez Pérez
+uidNumber: 1004
+gidNumber: 1004
+userPassword: password123
+homeDirectory: /home/maria
+loginShell: /bin/bash
+
+dn: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: tic05j
+description: 12345675J
+mail: javier.rodriguez@carm.es
+sn: Belmonte Pérez
+givenName: Javier
+cn: Javier Belmonte Pérez
+displayName: Javier Belmonte Pérez
+uidNumber: 1005
+gidNumber: 1005
+userPassword: password123
+homeDirectory: /home/javier
+loginShell: /bin/bash
+
+# 4. Grupos a los que pertenecen los usuarios
+dn: cn=profesional_no_sanitario,ou=groups,dc=sms,dc=carm,dc=es
+objectClass: top
+objectClass: groupOfNames
+cn: profesional_no_sanitario
+member: uid=amh09h,ou=usuarios,dc=sms,dc=carm,dc=es
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+
+dn: cn=tic_soporte,ou=groups,dc=sms,dc=carm,dc=es
+objectClass: top
+objectClass: groupOfNames
+cn: tic_soporte
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+
+dn: cn=profesional_sanitario_facultativo,ou=groups,dc=sms,dc=carm,dc=es
+objectClass: top
+objectClass: groupOfNames
+cn: profesional_sanitario_facultativo
+member: uid=alp04r,ou=usuarios,dc=sms,dc=carm,dc=es
+member: uid=med03j,ou=usuarios,dc=sms,dc=carm,dc=es
+member: uid=med08p,ou=usuarios,dc=sms,dc=carm,dc=es
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+
+dn: cn=profesional_sanitario_no_facultativo,ou=groups,dc=sms,dc=carm,dc=es
+objectClass: top
+objectClass: groupOfNames
+cn: profesional_sanitario_no_facultativo
+member: uid=enf04m,ou=usuarios,dc=sms,dc=carm,dc=es
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+

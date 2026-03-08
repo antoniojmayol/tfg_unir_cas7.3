@@ -1,0 +1,5 @@
+dn: cn=profesional_no_sanitario,ou=groups,dc=sms,dc=carm,dc=es
+objectClass: top
+objectClass: groupOfNames
+cn: profesional_no_sanitario
+member: uid=amh09h,ou=usuarios,dc=sms,dc=carm,dc=es

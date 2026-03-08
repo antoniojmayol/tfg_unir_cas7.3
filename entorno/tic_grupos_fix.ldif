@@ -1,0 +1,14 @@
+dn: cn=profesional_no_sanitario,ou=groups,dc=sms,dc=carm,dc=es
+changetype: modify
+add: member
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+
+dn: cn=profesional_sanitario_no_facultativo,ou=groups,dc=sms,dc=carm,dc=es
+changetype: modify
+add: member
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es
+
+dn: cn=profesional_sanitario_facultativo,ou=groups,dc=sms,dc=carm,dc=es
+changetype: modify
+add: member
+member: uid=tic05j,ou=usuarios,dc=sms,dc=carm,dc=es

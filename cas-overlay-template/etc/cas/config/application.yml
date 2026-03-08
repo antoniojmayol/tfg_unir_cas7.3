@@ -1,0 +1,12 @@
+server:
+  servlet:
+    session:
+      timeout: 10m
+      cookie:
+        name: JSESSIONID
+        http-only: true
+        secure: false
+        same-site: none
+        path: /
+      tracking-modes: COOKIE
+
